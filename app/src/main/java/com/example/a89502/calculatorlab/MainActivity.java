@@ -1,6 +1,6 @@
 package com.example.a89502.calculatorlab;
 
-import android.net.sip.SipSession;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button button0, button1, button2, button3, button4, button5, button6,
             button7, button8, button9, buttonAdd, buttonSub, buttonDivision,
-            buttonMul, buttonDot, buttonC, buttonEqual;
+            buttonMul, buttonDot, buttonC, buttonEqual, about;
 
     EditText crunchifyEditText;
     TextView infoText;
@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         buttonDivision = (Button) findViewById(R.id.buttonDivide);
         buttonC = (Button) findViewById(R.id.buttonClear);
         buttonEqual = (Button) findViewById(R.id.buttonEqual);
+
+        about = (Button) findViewById(R.id.aboutBtn);
 
         crunchifyEditText = (EditText) findViewById(R.id.editText);
         infoText = (TextView) findViewById(R.id.infoTextView);
@@ -214,6 +216,17 @@ public class MainActivity extends AppCompatActivity {
                     crunchifyEditText.setText(mValueOne / mValueTwo + "");
                     crunchifyDivision = false;
                 }
+            }
+        });
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//
+
+                Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
+//                EditText editText = (EditText) findViewById(R.id.editText);
+                startActivity(intent);
             }
         });
 
