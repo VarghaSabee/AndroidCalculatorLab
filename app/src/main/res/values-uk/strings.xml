@@ -12,7 +12,6 @@
     <string name="fact">X!</string>
     <string name="clear">C</string>
 
-
     <string name="buttonZero">0</string>
     <string name="btnDot">.</string>
 
@@ -32,15 +31,15 @@
     <string name="equals">=</string>
 
 
-    <string name="menu_home">Home</string>
-    <string name="menu_lang">Language</string>
-    <string name="menu_about">About</string>
-    <string name="menu_exit">Exit</string>
-    <string name="menu_trig">Trigonometric</string>
+    <string name="menu_home">Головне</string>
+    <string name="menu_lang">Мова</string>
+    <string name="menu_about">Про Нас</string>
+    <string name="menu_exit">Вихід</string>
+    <string name="menu_trig">Тригонометрія</string>
 
 
 
-    <string name="about_text">About Activity</string>
+    <string name="about_text">Про нас Activity</string>
     <string name="about_info">2019 by S. Vargha</string>
 
 

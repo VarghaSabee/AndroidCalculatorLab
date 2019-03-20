@@ -3,17 +3,22 @@ package com.example.a89502.calculatorlab;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
     Button button0, button1, button2, button3, button4, button5, button6,
             button7, button8, button9, buttonAdd, buttonSub, buttonDivision,
-            buttonMul, buttonDot, buttonC, buttonEqual, about,addit;
+            buttonMul, buttonDot, buttonC, buttonEqual;
 
     EditText crunchifyEditText;
     TextView infoText;
@@ -46,12 +51,9 @@ public class MainActivity extends AppCompatActivity {
         buttonC = (Button) findViewById(R.id.buttonClear);
         buttonEqual = (Button) findViewById(R.id.buttonEqual);
 
-        about = (Button) findViewById(R.id.aboutBtn);
-        addit = (Button) findViewById(R.id.AdditBtn);
 
         crunchifyEditText = (EditText) findViewById(R.id.editText);
         infoText = (TextView) findViewById(R.id.infoTextView);
-
 
 
         /// Button Listeners
@@ -127,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         // Clear
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,48 +146,85 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
         // Actions
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
 
-                if (crunchifyEditText == null) {
-                    crunchifyEditText.setText("");
-                } else {
-                    mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
-                    crunchifyAddition = true;
-                    crunchifyEditText.setText(null);
+                    if (crunchifyEditText == null) {
+                        crunchifyEditText.setText("");
+                    } else {
+                        mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                        crunchifyAddition = true;
+                        crunchifyEditText.setText(null);
+                    }
+                } catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            e.getMessage(),
+                            Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                 }
+
             }
         });
 
         buttonSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
-                mSubtract = true;
-                crunchifyEditText.setText(null);
+                try {
+
+                    mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                    mSubtract = true;
+                    crunchifyEditText.setText(null);
+
+                } catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            e.getMessage(),
+                            Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
             }
         });
 
         buttonMul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
-                crunchifyMultiplication = true;
-                crunchifyEditText.setText(null);
+                try {
+
+                    mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                    crunchifyMultiplication = true;
+                    crunchifyEditText.setText(null);
+                } catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            e.getMessage(),
+                            Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
+
             }
         });
 
         buttonDivision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
-                crunchifyDivision = true;
-                crunchifyEditText.setText(null);
+                try {
+
+                    mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                    crunchifyDivision = true;
+                    crunchifyEditText.setText(null);
+
+                } catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            e.getMessage(),
+                            Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
             }
         });
 
@@ -196,55 +234,79 @@ public class MainActivity extends AppCompatActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mValueTwo = Float.parseFloat(crunchifyEditText.getText() + "");
+                try {
 
-                if (crunchifyAddition == true) {
-                    crunchifyEditText.setText(mValueOne + mValueTwo + "");
-                    crunchifyAddition = false;
+                    mValueTwo = Float.parseFloat(crunchifyEditText.getText() + "");
+
+                    if (crunchifyAddition == true) {
+                        crunchifyEditText.setText(mValueOne + mValueTwo + "");
+                        crunchifyAddition = false;
+                    }
+
+                    if (mSubtract == true) {
+                        crunchifyEditText.setText(mValueOne - mValueTwo + "");
+                        mSubtract = false;
+                    }
+
+                    if (crunchifyMultiplication == true) {
+                        crunchifyEditText.setText(mValueOne * mValueTwo + "");
+                        crunchifyMultiplication = false;
+                    }
+
+                    if (crunchifyDivision == true) {
+                        crunchifyEditText.setText(mValueOne / mValueTwo + "");
+                        crunchifyDivision = false;
+                    }
+                } catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            e.getMessage(),
+                            Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                 }
-
-                if (mSubtract == true) {
-                    crunchifyEditText.setText(mValueOne - mValueTwo + "");
-                    mSubtract = false;
-                }
-
-                if (crunchifyMultiplication == true) {
-                    crunchifyEditText.setText(mValueOne * mValueTwo + "");
-                    crunchifyMultiplication = false;
-                }
-
-                if (crunchifyDivision == true) {
-                    crunchifyEditText.setText(mValueOne / mValueTwo + "");
-                    crunchifyDivision = false;
-                }
-            }
-        });
-
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//
-
-                Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
-//                EditText editText = (EditText) findViewById(R.id.editText);
-                startActivity(intent);
-            }
-        });
-
-        addit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//
-
-                Intent intent = new Intent(getApplicationContext(), Trigonometric.class);
-//                EditText editText = (EditText) findViewById(R.id.editText);
-                startActivity(intent);
             }
         });
 
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.trig_menu:
+                Intent intent = new Intent(getApplicationContext(), TrigonometricActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.about_menu:
+                Intent about_intent = new Intent(getApplicationContext(), AboutActivity.class);
+                startActivity(about_intent);
+                break;
+            case R.id.home_menu:
+                Intent home_intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(home_intent);
+                break;
+            case R.id.exit_menu:
+                int pid = android.os.Process.myPid();
+                android.os.Process.killProcess(pid);
+                System.exit(0);
+                break;
+            case R.id.lang_menu:
+                super.finish();
+                System.exit(0);
+                break;
+
+        }
+        return true;
+    }
 
 
 }
