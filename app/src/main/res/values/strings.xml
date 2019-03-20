@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">CalculatorLab</string>
+
+
+    <string name="sin">Sin</string>
+    <string name="cos">Cos</string>
+    <string name="tan">Tan</string>
+    <string name="ctg">Ctg</string>
+    <string name="sqr">Sqr</string>
+    <string name="ln">Ln</string>
+    <string name="exp">Exp</string>
+    <string name="sqrt">Sqrt</string>
+    <string name="fact">!</string>
+
+    <string name="buttonZero">0</string>
+    <string name="btnDot">.</string>
+
+    <string name="buttonOne">1</string>
+    <string name="buttonTwo">2</string>
+    <string name="buttonThree">3</string>
+
+
+    <string name="buttonFour">4</string>
+    <string name="buttonFive">5</string>
+    <string name="buttonSix">6</string>
+
+    <string name="buttonSeven">7</string>
+    <string name="buttonEight">8</string>
+    <string name="buttonNine">9</string>
+
+    <string name="equals">=</string>
+
+
 </resources>

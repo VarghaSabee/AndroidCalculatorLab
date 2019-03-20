@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button button0, button1, button2, button3, button4, button5, button6,
             button7, button8, button9, buttonAdd, buttonSub, buttonDivision,
-            buttonMul, buttonDot, buttonC, buttonEqual, about;
+            buttonMul, buttonDot, buttonC, buttonEqual, about,addit;
 
     EditText crunchifyEditText;
     TextView infoText;
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         buttonEqual = (Button) findViewById(R.id.buttonEqual);
 
         about = (Button) findViewById(R.id.aboutBtn);
+        addit = (Button) findViewById(R.id.AdditBtn);
 
         crunchifyEditText = (EditText) findViewById(R.id.editText);
         infoText = (TextView) findViewById(R.id.infoTextView);
@@ -225,6 +226,17 @@ public class MainActivity extends AppCompatActivity {
 //
 
                 Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
+//                EditText editText = (EditText) findViewById(R.id.editText);
+                startActivity(intent);
+            }
+        });
+
+        addit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//
+
+                Intent intent = new Intent(getApplicationContext(), Trigonometric.class);
 //                EditText editText = (EditText) findViewById(R.id.editText);
                 startActivity(intent);
             }
