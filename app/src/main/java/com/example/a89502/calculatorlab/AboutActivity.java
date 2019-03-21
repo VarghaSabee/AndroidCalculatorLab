@@ -40,16 +40,12 @@ public class AboutActivity extends AppCompatActivity {
                 startActivity(home_intent);
                 break;
             case R.id.exit_menu:
-                int pid = android.os.Process.myPid();
-                android.os.Process.killProcess(pid);
-                System.exit(0);
+//                android.os.Process.killProcess(android.os.Process.myPid());
+//                System.exit(1);
+                moveTaskToBack(true);
+                finish();
                 break;
-            case R.id.lang_menu:
-                super.finish();
-                System.exit(0);
-                break;
-
-        }
+            }
         return true;
     }
 }

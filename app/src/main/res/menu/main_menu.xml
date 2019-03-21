@@ -10,10 +10,6 @@
         android:icon="@drawable/ic_action_home"
         android:title="@string/menu_home"></item>
     <item
-        android:id="@+id/lang_menu"
-        android:icon="@drawable/ic_action_lang"
-        android:title="@string/menu_lang"></item>
-    <item
         android:id="@+id/about_menu"
         android:icon="@drawable/ic_action_info"
         android:title="@string/menu_about"></item>

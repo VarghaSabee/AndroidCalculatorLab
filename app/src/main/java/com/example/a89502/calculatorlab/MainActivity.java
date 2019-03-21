@@ -295,13 +295,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(home_intent);
                 break;
             case R.id.exit_menu:
-                int pid = android.os.Process.myPid();
-                android.os.Process.killProcess(pid);
-                System.exit(0);
-                break;
-            case R.id.lang_menu:
-                super.finish();
-                System.exit(0);
+                moveTaskToBack(true);
+                finish();
                 break;
 
         }
